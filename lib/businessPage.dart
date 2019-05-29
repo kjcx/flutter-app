@@ -52,7 +52,7 @@ class MyList extends State<BusinessPageWidget>{
   getDeviceList(int key,int value) async {
     Response response;
     Dio dio = new Dio();
-    response = await dio.post("http://192.168.31.64:8088/list", data: {"id": key, "value": value});
+    response = await dio.post("http://139.129.119.229:8088/list", data: {"id": key, "value": value});
 //  Map List = Map<int,DeviceInfo>();
 
     var userMap = response.data;

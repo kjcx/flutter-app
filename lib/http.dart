@@ -5,7 +5,7 @@ import 'user.dart';
 import 'model/DeviceInfo.dart';
 void getHttp() async {
   try {
-    Response response = await Dio().get("http://192.168.31.64:8088/test");
+    Response response = await Dio().get("http://139.129.119.229:8088/test");
     print(response.data);
   } catch (e) {
     print(e);
@@ -15,7 +15,7 @@ void getHttp() async {
 void postHttp(int key,int value) async {
   Response response;
   Dio dio = new Dio();
-  response = await dio.post("http://192.168.31.64:8088/test", data: {"id": key, "value": value});
+  response = await dio.post("http://139.129.119.229:8088/test", data: {"id": key, "value": value});
 
 
 //  Map userMap = jsonDecode(response.data.toString());
@@ -30,7 +30,7 @@ void postHttp(int key,int value) async {
 Future<Map>  getDeviceList(int key,int value) async {
   Response response;
   Dio dio = new Dio();
-  response = await dio.post("http://192.168.31.64:8088/list", data: {"id": key, "value": value});
+  response = await dio.post("http://139.129.119.229:8088/list", data: {"id": key, "value": value});
 //  Map List = Map<int,DeviceInfo>();
 
   var userMap = response.data;
