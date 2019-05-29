@@ -147,7 +147,7 @@ void showAboutDialog(BuildContext context,int indexOf) {
   showDialog(
       context: context,
       builder: (_) =>  AlertDialog(
-        title: new Text("title"),
+        title: new Text("设置"),
         content: TextField(
           controller: _controller,//设置控制器，这个控制器能获取输入框内容
 
