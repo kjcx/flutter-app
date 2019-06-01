@@ -11,6 +11,7 @@ class BusinessPageWidget extends StatefulWidget{
     return new MyList();
   }
 }
+
 class MyList extends State<BusinessPageWidget>{
   List<Widget> _list = new List();
   List<String> DeviceList = [];
