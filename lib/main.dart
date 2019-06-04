@@ -19,7 +19,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   void initState() {
     pages
       ..add(HomePageWidget())
-      ..add(BusinessPageWidget())
+//      ..add(BusinessPageWidget())
       ..add(MyPageWidget());
   }
   @override
@@ -38,15 +38,15 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 Icons.home,
               ),
               title: new Text(
-                '首页',
+                '设备列表',
               )),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.business,
-              ),
-              title: new Text(
-                '设备',
-              )),
+//          BottomNavigationBarItem(
+//              icon: Icon(
+//                Icons.business,
+//              ),
+//              title: new Text(
+//                '设备',
+//              )),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.mood,
@@ -61,6 +61,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         onTap: (int i) {
           //进行状态更新，将系统返回的你点击的标签位标赋予当前位标属性，告诉系统当前要显示的导航标签被用户改变了。
           setState(() {
+            print(pages);
             _currentIndex = i;
           });
         },
