@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'views/ListViewRow.dart';
-import 'views/Text.dart';
-import 'views/deviceInfo.dart';
-import 'views/ListView.dart';
+import 'model/HomeDataModel.dart';
 import 'views/listViewListTile.dart';
 import 'package:dio/dio.dart';
 class HomePageWidget extends StatefulWidget{
@@ -36,6 +34,7 @@ class HomePageWidgetState extends State<HomePageWidget>{
     Response response;
     Dio dio = new Dio();
     response = await dio.post("http://139.129.119.229:8088/list", data: {});
+
     var userMap = response.data;
     print(userMap["Code"]);
     for (int i = 0; i < userMap["Data"].length; i++) {
