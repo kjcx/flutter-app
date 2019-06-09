@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'HomeDataModel.dart';
+part of 'home_data_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Entity _$EntityFromJson(Map<String, dynamic> json) {
-  return Entity(
+HomeDataModel _$HomeDataModelFromJson(Map<String, dynamic> json) {
+  return HomeDataModel(
       json['Code'] as int,
       (json['Data'] as List)
           ?.map((e) =>
@@ -15,7 +15,7 @@ Entity _$EntityFromJson(Map<String, dynamic> json) {
           ?.toList());
 }
 
-Map<String, dynamic> _$EntityToJson(Entity instance) =>
+Map<String, dynamic> _$HomeDataModelToJson(HomeDataModel instance) =>
     <String, dynamic>{'Code': instance.code, 'Data': instance.data};
 
 Data _$DataFromJson(Map<String, dynamic> json) {

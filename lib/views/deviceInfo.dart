@@ -173,6 +173,38 @@ void showAlertDialog(BuildContext context,int indexOf) {
       );
     },
   );
+  TextEditingController _userEtController = TextEditingController();
+  void showMyMaterialDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return new AlertDialog(
+            title: new Text("请输入"),
+            content: new TextField(
+              autofocus: true,
+              controller: _userEtController,
+              keyboardType:TextInputType.number,
+              
+              ),
+              actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  print(_userEtController.text);
+                  Navigator.of(context).pop();
+                },
+                child: new Text("确认"),
+              ),
+              new FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: new Text("取消"),
+              ),
+            ],
+          );
+        });
+  }
+  
 }
 
 

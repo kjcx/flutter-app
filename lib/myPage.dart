@@ -1,3 +1,4 @@
+import 'package:app/model/home_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -54,13 +55,5 @@ class MyPageWidgetState extends State<MyPageWidget> {
           );
         });
   }
-  void loadData() async{
-    String cssStr = await DefaultAssetBundle.of(context).loadString('json/HomeData.json');
-    CommonModel model = CommonModel.fromJson(json.decode(cssStr));
-    setState(() {
-      List<dynamic>data = [];
-      data.addAll(model.datas);
-      dataList.addAll(data);//给数据源赋值
-    });
-  }
+  
 }

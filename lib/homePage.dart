@@ -1,6 +1,8 @@
+import 'dart:convert';
+
+import 'package:app/model/home_data_model.dart';
 import 'package:flutter/material.dart';
 import 'views/ListViewRow.dart';
-import 'model/HomeDataModel.dart';
 import 'views/listViewListTile.dart';
 import 'package:dio/dio.dart';
 class HomePageWidget extends StatefulWidget{
@@ -34,13 +36,10 @@ class HomePageWidgetState extends State<HomePageWidget>{
     Response response;
     Dio dio = new Dio();
     response = await dio.post("http://139.129.119.229:8088/list", data: {});
-
+  HomeDataModel model = HomeDataModel.fromJson(response.data);
+    print(model.data[0]);
     var userMap = response.data;
-    print(userMap["Code"]);
-    for (int i = 0; i < userMap["Data"].length; i++) {
-      Map info =  userMap["Data"][i];
-
-    }
+    
     setState(() {
       _list = userMap["Data"];
     });

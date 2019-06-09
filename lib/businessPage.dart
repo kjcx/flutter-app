@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:dio/dio.dart';
-
+import 'model/home_data_model.dart';
 import 'http.dart';
 class BusinessPageWidget extends StatefulWidget{
 
@@ -55,7 +57,8 @@ class MyList extends State<BusinessPageWidget>{
     Dio dio = new Dio();
     response = await dio.post("http://139.129.119.229:8088/list", data: {"id": key, "value": value});
 //  Map List = Map<int,DeviceInfo>();
-
+    HomeDataModel model = HomeDataModel.fromJson(jsonDecode(response.data));
+    print(model);
     var userMap = response.data;
     print(userMap["Code"]);
     for (int i = 0; i < userMap["Data"].length; i++) {

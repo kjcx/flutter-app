@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart'; 
   
-part 'HomeDataModel.g.dart';
+part 'home_data_model.g.dart';
 
 
 @JsonSerializable()
-  class Entity extends Object {
+  class HomeDataModel extends Object {
 
   @JsonKey(name: 'Code')
   int code;
@@ -12,11 +12,11 @@ part 'HomeDataModel.g.dart';
   @JsonKey(name: 'Data')
   List<Data> data;
 
-  Entity(this.code,this.data,);
+  HomeDataModel(this.code,this.data,);
 
-  factory Entity.fromJson(Map<String, dynamic> srcJson) => _$EntityFromJson(srcJson);
+  factory HomeDataModel.fromJson(Map<String, dynamic> srcJson) => _$HomeDataModelFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$EntityToJson(this);
+  Map<String, dynamic> toJson() => _$HomeDataModelToJson(this);
 
 }
 
